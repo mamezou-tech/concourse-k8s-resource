@@ -1,0 +1,32 @@
+{
+  "version": { "ref": "61cebf" },
+  "source": {
+    "api_server_url": "https://172.16.10.11:6443",
+    "api_server_cert": "-----BEGIN CERTIFICATE-----\nMIICyDCCAbCgAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTE5MTIzMTIzNTk1OFoXDTI5MTIyODIzNTk1OFowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJsh\niuGrvdI1YzuQM9yrREsRugS+JWBLYvlo4g+LKdt2YVHhGT6tyd4+FZxodq95kkn7\n8DEpau8LLCMvXGTUPGSdWgbH70Jkts8mSXwoY1R+GFzLolKeEdgOcCn5HVAh0L/V\nvZl60Iy+GI+3n/q0C+aSE+IQGebqr9/ripphJvufEw8Whdy3pQplhaZq8rBLNDr5\nu9NOR+IQOvvf25nAbAvP+lH9CFcckb6nv2fV/Q8YybAA8/bFaNDo+mXQbGtJ9gkK\nJBnSWD2n5LNX4G3yw2p/38UQTTCF4tSI/92UEiobbOqAP37mEQQOkcxQXhadtMJz\nQWu8XGe483CtF0Nku0ECAwEAAaMjMCEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAAJ/grFvkr52AVgF7VE1cvk4128\njFl+3owB9id+XFqeUfJIs2kQqG1IkSQhW4XRp2oZ+dwJ0Mf9852oCRtXNaJBhFcH\nn1LWmTsqY/v3abryg3PezHDoxznCW2V0zHaeC/46oMWdoYV0Gruyk5VIuU0psmOI\nK/O1O4BVhmmVXVEfpHriGgdcA+0Hbs3xIIFWluQ1BHWpq/EHA2QPsL3BfUsptEm4\niNE/Vaq7gOpHHSlHd11/lCzCb+Uwlegtjo66wiSoTGRMp/MOD7o81dSW3jhKtt+p\naeiNl12FygFE/YosX3nRGX1UoWeC/TmY/p6q+jeKoEXRA/RXAUmZYFXhQ2Q=\n-----END CERTIFICATE-----",
+    "client_cert": "-----BEGIN CERTIFICATE-----\nMIICwjCCAaoCFDvXDRPyDqOGphLPhBWTSIF4svbGMA0GCSqGSIb3DQEBCwUAMBUx\nEzARBgNVBAMTCmt1YmVybmV0ZXMwHhcNMjAwMTAxMDAwMDIzWhcNMjAxMjI2MDAw\nMDIzWjAmMQ4wDAYDVQQDDAVhZG1pbjEUMBIGA1UECgwLbWFtZXpvdS1zcmUwggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCrNsE6uf/mYviER93O7dmHVEje\n7lmMSI8mBiFrGrbv0pnKy8sbTERc6LB2sONgoozeJAXbOjXn+N+S5EYanozFBigW\novmBep6Nw/mkuDRxu3eDeDNkR/OrFdUM5+erA1d+NbdsglnIfRakCo90+hLr7suK\nkPdJP4U5eJ5lnkqxY73hOoWdHMEcWCyCfqbQ+X7EQ17+rUErxMPoe3kasNPtAEkb\nokSxzfHd5o1bs/6Pn3WwqSK3ssbh/tHHwP62rCg4DgNbReNlG29UrlIXtW21oAlb\nH+VsoZORf0Gtv7wcmqtE2wGcz210ENhCqTZx0SgtQCoFMM60MvV+u2ZJ8i0DAgMB\nAAEwDQYJKoZIhvcNAQELBQADggEBAJX9/Xa4VATH1KU83OPRLxQbB+M0er86VjwE\nUGL4wHEma1XYDGDdwBTSFQXxa6dmvYtWZJ6bOWa0S+Io8WUmAQ+FE+LP7uohczt1\nZtul6ZE2vIXEt1cThRHjVpg1gJePqHiKazEclDbdhqnLSsd04NdL2vG9KZNS9Dwk\nKBja3rmzJeyS1hAO3pu3s7bNulokAyR5a9VGZsK9xLDy/K9M6pApFXzRiVu7gNPL\ncgBWXh98vKAj4F2jW5N2r92oHTRxY9vX7AcFV32RQdYD2cP+QWgISt2iqBBbgcWw\n7sA/Mj2JCuqCIYV699CDo0Eu1acZZ5ygJn2yFgKQr/0LJR//M9w=\n-----END CERTIFICATE-----\n",
+    "client_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrNsE6uf/mYviE\nR93O7dmHVEje7lmMSI8mBiFrGrbv0pnKy8sbTERc6LB2sONgoozeJAXbOjXn+N+S\n5EYanozFBigWovmBep6Nw/mkuDRxu3eDeDNkR/OrFdUM5+erA1d+NbdsglnIfRak\nCo90+hLr7suKkPdJP4U5eJ5lnkqxY73hOoWdHMEcWCyCfqbQ+X7EQ17+rUErxMPo\ne3kasNPtAEkbokSxzfHd5o1bs/6Pn3WwqSK3ssbh/tHHwP62rCg4DgNbReNlG29U\nrlIXtW21oAlbH+VsoZORf0Gtv7wcmqtE2wGcz210ENhCqTZx0SgtQCoFMM60MvV+\nu2ZJ8i0DAgMBAAECggEAQx3806O0cEEeAOUXS5Yr7wQYaOPw0LBlBVfj49OeIRdi\n2H/ZSAM2zWEeQ/kFuY0fQbnHXfBMz3ndUv0PikHbFyVZs74Bp0NFQnevtmXLkUYX\nDL+jDc2y9L9jPGLwizaNJtmx5OSYg6KdrILDR+z8W+bJfbFkbx9qf2QMW/OYfj7i\nPAXbdxF7/eRRk+rsu0trZ/sDQXMH8A3iTpGpoxk3zEzlGswCvvQrJWiupphDFoMt\ngOwLgF/kzjSyBJZslLJ/+hWavSW3UiJMNNTcky7yvqj+p35X2Flgop3LEUjZdq19\ntjdjSFrDHr3+odFcxixH3dkDWInJY5xhgZblRRErWQKBgQDS53OLK3ztrjzqMjMd\nXP2n6DIYEQ0/cOi89ULt322TRPKbFtnI4mTqCEH4CaRS9sZWCsJs2OX1JL+mObZO\nwfj1G1TjXTrGLZVPnOXae9IISJfFrthSQm32dFQ5+fahiVPUPIyuUhmLVaGFo6oS\nPVhNXOYhkdroqP7iDooZ1AUbvwKBgQDP0rmkDTtQBgDgzET0LnWZdsDhZ4x7d2GR\nn2Og781pmIMCNmVH5STU/91SLSxXcD/yrUoaVseWCluOlwkNLFyASDPpB7wCuPpB\n9wH1c38iIQj3/LQnzz4i8DQhgoBnnb1vO/3Bu1mBxC88nwRB38hXf9bOuu4CNay8\nYMX7R5OPvQKBgByBgBJ9bENL25vj8Ri06uv47FxoYZwDjNGNbOBt5IeVOB1SN1l5\nkB45w4Dc/MLh6+jRR3oizuIVd3nmLwfyG841RYH9peYHXzkFgePH/Jl2Bl2HxmFH\n7Uj0bDXx3S30O8ph7LnbCuzURCKl/mS8ueSq+8fpyObNgLXZNT1MdOxNAoGAO5tY\nDXqSEYC3TcKo4FRW/H44Ei5t95elD2xk2esNwoSwxritUfKiHsmIRCKavjV+0e7r\n+yP6uMkdu4cMXI/ltBGBegvy2+EMPlFHaYwH4dURynbbgTOKweCdQyM4CwAOLlJJ\nlQBUSsjnN37wbKhvwND03nR1AYM9mQY0or7Dzw0CgYAIL2+8LI3u2zPzn2tPimN5\nuFLU1i+k8TltqFs75zJxW//TOzaX6yxNKcrGwmimWNtEgSsJ+JicHaIQTzkEbJli\nvefGyJne/451xEHW4jhhEiwa4rMw4fCwNZ1rX7l9+YZZqHQTs7xRV8dID3fcfAnq\nXkv0WCwnvAH0PCQP4ItqBw==\n-----END PRIVATE KEY-----\n",
+    "skip_tls_verify": false,
+    "namespace": "dev",
+    "debug": true,
+    "watch_resources": [
+      {
+        "kind": "Deployment",
+        "name": "app1"
+      },
+      {
+        "kind": "Deployment",
+        "name": "app2"
+      },
+      {
+        "kind": "statefulset",
+        "name": "web"
+      }
+    ]
+  },
+  "params": {
+    "kustomize": true,
+    "paths": ["test/kustomize/overlays/prod"],
+    "status_check_timeout": 60,
+    "delete": true
+  }
+}

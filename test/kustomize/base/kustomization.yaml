@@ -1,0 +1,6 @@
+commonLabels:
+  owner: kudoh
+resources:
+- deploy1.yaml
+- deploy2.yaml
+- sts.yaml

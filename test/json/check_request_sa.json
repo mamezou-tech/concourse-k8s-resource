@@ -1,0 +1,25 @@
+{
+  "version": { "ref": "61cebf" },
+  "source": {
+    "api_server_url": "https://172.16.10.11:6443",
+    "api_server_cert": "-----BEGIN CERTIFICATE-----\nMIICyDCCAbCgAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTE5MTIzMTIzNTk1OFoXDTI5MTIyODIzNTk1OFowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJsh\niuGrvdI1YzuQM9yrREsRugS+JWBLYvlo4g+LKdt2YVHhGT6tyd4+FZxodq95kkn7\n8DEpau8LLCMvXGTUPGSdWgbH70Jkts8mSXwoY1R+GFzLolKeEdgOcCn5HVAh0L/V\nvZl60Iy+GI+3n/q0C+aSE+IQGebqr9/ripphJvufEw8Whdy3pQplhaZq8rBLNDr5\nu9NOR+IQOvvf25nAbAvP+lH9CFcckb6nv2fV/Q8YybAA8/bFaNDo+mXQbGtJ9gkK\nJBnSWD2n5LNX4G3yw2p/38UQTTCF4tSI/92UEiobbOqAP37mEQQOkcxQXhadtMJz\nQWu8XGe483CtF0Nku0ECAwEAAaMjMCEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAAAJ/grFvkr52AVgF7VE1cvk4128\njFl+3owB9id+XFqeUfJIs2kQqG1IkSQhW4XRp2oZ+dwJ0Mf9852oCRtXNaJBhFcH\nn1LWmTsqY/v3abryg3PezHDoxznCW2V0zHaeC/46oMWdoYV0Gruyk5VIuU0psmOI\nK/O1O4BVhmmVXVEfpHriGgdcA+0Hbs3xIIFWluQ1BHWpq/EHA2QPsL3BfUsptEm4\niNE/Vaq7gOpHHSlHd11/lCzCb+Uwlegtjo66wiSoTGRMp/MOD7o81dSW3jhKtt+p\naeiNl12FygFE/YosX3nRGX1UoWeC/TmY/p6q+jeKoEXRA/RXAUmZYFXhQ2Q=\n-----END CERTIFICATE-----",
+    "clientToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNLblg3Q0tZbjdSSlctSmZBeldHNUMyb2s0eDBYb3Zud00xcFpYOE8zYUEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZXYiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoiZGVwbG95ZXItdG9rZW4ta2JkZm4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVwbG95ZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJkOWIzODQxZS0wYzczLTRlMTAtODVkOS0zZTZjYThmYzhlOWIiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGV2OmRlcGxveWVyIn0.g9mXVGejwDSAXmDKlueU-kqHWA0RgAQHpdL5m4jHfkP-LFAE57hsPyxGqjAUxaXU5QDy6xmmVHUDT2tI8pid3oQ52ymt6xnB7Ha_tePE4_1julUCPoERUm92jmlATKBEvU28fODBS--JavdwCS5lJ3NiTohQyOJRFSSCpiYcxW58ymixI5Tf0OVIeK2SlHAXARVaJOc0Abq6b3cbN02m1KlGv-2_YU9HvTNEhx6DortfgxcrttXIz73Cx80pvvCwADtBd-oEcwa3L4GBlHTBiHhlTYUTEG_YKo17GYh7Y4K3FQmKdSk5RtOtiYBdUSVSy-QEGEEx3UwpZP2j14Vtnw",
+    "skip_tls_verify": false,
+    "namespace": "dev",
+    "debug": true,
+    "watch_resources": [
+      {
+        "kind": "Deployment",
+        "name": "app1"
+      },
+      {
+        "kind": "Deployment",
+        "name": "app2"
+      },
+      {
+        "kind": "statefulset",
+        "name": "web"
+      }
+    ]
+  }
+}
