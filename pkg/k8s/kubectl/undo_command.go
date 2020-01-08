@@ -33,7 +33,7 @@ func (*undoCommandFactory) create(config *CommandConfig) (commands []*Command, e
 				log.Fatalf("%s has rev 1, so undo operation cannot execute.\n", resource.Name)
 			}
 			log.Printf("[%s]current rev:%d\n", resource.Name, rev)
-			setFlag(command, "to-revision", strconv.Itoa(int(rev-1)))
+			setFlag(command, "to-revision", strconv.FormatInt(rev-1, 10))
 			args := []string{fmt.Sprintf("%s/%s", "deployment", resource.Name)}
 
 			commands = append(commands, &Command{command: command, args: args})

@@ -54,7 +54,6 @@ func main() {
 	}
 
 	response := createResponse(request, clientset)
-	utils.WriteFile("version", response.Version.Revision)
 
 	utils.Debug(&request.Source, "response: ", *response)
 	if err := json.NewEncoder(os.Stdout).Encode(response); err != nil {

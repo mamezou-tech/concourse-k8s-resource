@@ -18,9 +18,11 @@ func main() {
 		log.Fatalln("Illegal input format", err)
 	}
 	utils.Debug(&request.Source, "request: ", request)
+	utils.ChangeWorkingDir()
 
 	clientset, _ := k8s.BuildClientSet(&request.Source)
 	response := createResponse(request, clientset)
+	utils.WriteFile("version", response.Version.Revision)
 
 	utils.Debug(&request.Source, "response: ", *response)
 	if err := json.NewEncoder(os.Stdout).Encode(response); err != nil {
