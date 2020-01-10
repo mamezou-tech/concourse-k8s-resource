@@ -26,7 +26,7 @@ func createKubectlFactory(cc *CommandConfig) cmdutil.Factory {
 	newConfig := clientcmd.NewDefaultClientConfig(rawConfig,
 		&clientcmd.ConfigOverrides{Context: api.Context{Namespace: cc.Namespace}})
 
-	discoveryClient := memory.NewMemCacheClient(cc.Clientset.DiscoveryClient)
+	discoveryClient := memory.NewMemCacheClient(cc.Discovery)
 	getter := k8s.NewConcourseRESTClientGetter(restConfig, discoveryClient, newConfig)
 	factory := cmdutil.NewFactory(getter)
 

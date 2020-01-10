@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-const toRevisionName = "to_revision"
+const toRevisionName = "to-revision"
 
 type undoCommandFactory struct{}
 
@@ -51,7 +51,7 @@ func (*undoCommandFactory) create(config *CommandConfig) (commands []*Command, e
 			if rev.Revision == 1 {
 				log.Fatalf("%s has rev 1, so undo operation cannot execute.\n", resource.Name)
 			}
-			log.Printf("[%s]current rev:%d\n", resource.Name, rev)
+			log.Printf("[%s]current rev:%d\n", resource.Name, rev.Revision)
 			setFlag(command, toRevisionName, strconv.FormatInt(rev.Revision-1, 10))
 			args = []string{fmt.Sprintf("%s/%s", "statefulset", resource.Name)}
 		default:

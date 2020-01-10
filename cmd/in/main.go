@@ -20,7 +20,7 @@ func main() {
 	utils.Debug(&request.Source, "request: ", request)
 	utils.ChangeWorkingDir()
 
-	clientset, _ := k8s.BuildClientSet(&request.Source)
+	clientset, _ := k8s.NewClientSet(&request.Source)
 	response := createResponse(request, clientset)
 	utils.WriteFile("version", response.Version.Revision)
 
@@ -30,7 +30,7 @@ func main() {
 	}
 }
 
-func createResponse(request models.InRequest, clientset *kubernetes.Clientset) *models.InResponse {
+func createResponse(request models.InRequest, clientset kubernetes.Interface) *models.InResponse {
 
 	metadatas, err := k8s.GenerateMetadatas(&request.Source, clientset)
 	if errors.IsNotFound(err) {

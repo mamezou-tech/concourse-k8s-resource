@@ -20,8 +20,6 @@ fly -t ci uj -j test/test
 
 ## Local Testing
 
-TODO: Create golang-testing
-
 ```sh
 # check
 cat test/json/check_request_clientcert.json | go run cmd/check/main.go
@@ -32,10 +30,13 @@ cat test/json/check_request_clientcert.json | go run cmd/in/main.go
 cat test/json/check_request_kubeconfig.json | go run cmd/in/main.go
 cat test/json/check_request_sa.json | go run cmd/in/main.go
 # out
+## deploy
 cat test/json/out_request_apply_plain.json | go run cmd/out/main.go
 cat test/json/out_request_apply_kustomize.json | go run cmd/out/main.go
-cat test/json/out_request_delete_plain.json | go run cmd/out/main.go
-cat test/json/out_request_delete_kustomize.json | go run cmd/out/main.go
+## undo
 cat test/json/out_request_undo_plain.json | go run cmd/out/main.go
 cat test/json/out_request_undo_kustomize.json | go run cmd/out/main.go
+## delete
+cat test/json/out_request_delete_plain.json | go run cmd/out/main.go
+cat test/json/out_request_delete_kustomize.json | go run cmd/out/main.go
 ```

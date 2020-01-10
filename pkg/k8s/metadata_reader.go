@@ -18,7 +18,7 @@ type DeploymentReader struct {
 
 var _ MetadataReader = &DeploymentReader{}
 
-func NewDeploymentReader(clientset *kubernetes.Clientset, namespace string, name string) (*DeploymentReader, error) {
+func NewDeploymentReader(clientset kubernetes.Interface, namespace string, name string) (*DeploymentReader, error) {
 	d, err := clientset.AppsV1().Deployments(namespace).Get(name, metav1.GetOptions{})
 	if err != nil {
 		return nil, err
@@ -41,7 +41,7 @@ type StatefulSetReader struct {
 
 var _ MetadataReader = &StatefulSetReader{}
 
-func NewStatefulSetReader(clientset *kubernetes.Clientset, namespace string, name string) (*StatefulSetReader, error) {
+func NewStatefulSetReader(clientset kubernetes.Interface, namespace string, name string) (*StatefulSetReader, error) {
 	sts, err := clientset.AppsV1().StatefulSets(namespace).Get(name, metav1.GetOptions{})
 	if err != nil {
 		return nil, err

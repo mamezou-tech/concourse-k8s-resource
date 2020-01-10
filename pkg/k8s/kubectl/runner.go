@@ -5,6 +5,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
+	"k8s.io/client-go/discovery"
+
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 	"log"
@@ -12,7 +14,8 @@ import (
 )
 
 type CommandConfig struct {
-	Clientset    *kubernetes.Clientset
+	Clientset    kubernetes.Interface
+	Discovery    discovery.DiscoveryInterface
 	ClientConfig clientcmd.ClientConfig
 	Streams      genericclioptions.IOStreams
 	Namespace    string
@@ -47,7 +50,7 @@ func RunCommand(factory CommandFactory, config *CommandConfig) error {
 
 func run(cmd Command, wg *sync.WaitGroup) {
 	defer wg.Done()
-	log.Printf("running %s command...", cmd.command.Name())
+	log.Printf("running %s command... %v", cmd.command.Name(), cmd.args)
 	cmd.command.Run(cmd.command, cmd.args)
 }
 

@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func BuildClientSet(source *models.Source) (*kubernetes.Clientset, clientcmd.ClientConfig) {
+func NewClientSet(source *models.Source) (kubernetes.Interface, clientcmd.ClientConfig) {
 
 	config := NewClientConfig(source)
 	restConfig, err := config.ClientConfig()

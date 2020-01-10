@@ -19,7 +19,7 @@ func main() {
 	}
 	utils.Debug(&request.Source, "request: ", request)
 
-	clientset, _ := k8s.BuildClientSet(&request.Source)
+	clientset, _ := k8s.NewClientSet(&request.Source)
 	response := createCheckResponse(&request, clientset)
 
 	utils.Debug(&request.Source, "response:", response)
@@ -29,7 +29,7 @@ func main() {
 	}
 }
 
-func createCheckResponse(request *models.CheckRequest, clientset *kubernetes.Clientset) []models.Version {
+func createCheckResponse(request *models.CheckRequest, clientset kubernetes.Interface) []models.Version {
 	newVersion, err := k8s.GetCurrentVersion(&request.Source, clientset)
 	if errors.IsNotFound(err) {
 		// resource not found

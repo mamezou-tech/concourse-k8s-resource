@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func GenerateMetadatas(source *models.Source, clientset *kubernetes.Clientset) ([]models.Metadata, error) {
+func GenerateMetadatas(source *models.Source, clientset kubernetes.Interface) ([]models.Metadata, error) {
 
 	var metas []MetadataReader
 	for _, resource := range source.WatchResources {

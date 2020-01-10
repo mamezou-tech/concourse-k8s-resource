@@ -15,12 +15,12 @@ type statusChecker struct {
 	complete  chan error
 	timeout   <-chan time.Time
 	interrupt chan os.Signal
-	clientset *kubernetes.Clientset
+	clientset kubernetes.Interface
 	resource  *models.WatchResource
 	namespace string
 }
 
-func CheckResourceStatus(clientset *kubernetes.Clientset, namespace string, resources []models.WatchResource, waitseconds int32) bool {
+func CheckResourceStatus(clientset kubernetes.Interface, namespace string, resources []models.WatchResource, waitseconds int32) bool {
 
 	var timeout time.Duration
 	if waitseconds == 0 {

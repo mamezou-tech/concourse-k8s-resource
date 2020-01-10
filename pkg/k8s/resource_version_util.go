@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func GetCurrentVersion(source *models.Source, clientset *kubernetes.Clientset) (*models.Version, error) {
+func GetCurrentVersion(source *models.Source, clientset kubernetes.Interface) (*models.Version, error) {
 	builder := newResourceVersionBuilder()
 	for _, resource := range source.WatchResources {
 		switch {
