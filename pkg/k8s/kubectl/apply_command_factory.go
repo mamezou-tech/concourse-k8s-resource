@@ -16,6 +16,6 @@ func (*applyCommandFactory) create(config *CommandConfig) (commands []*Command, 
 	setFlag(command, "timeout", strconv.Itoa(int(config.Params.CommandTimeout))+"s")
 	setManifestPath(command, config.Params)
 
-	commands = append(commands, &Command{command: command, args: []string{}})
+	commands = append(commands, &Command{command, []string{}})
 	return
 }

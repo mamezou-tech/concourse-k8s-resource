@@ -5,7 +5,10 @@
 Concourse CI custom resource for kubernetes.
 
 This resource assumes that kubernetes deployment is executed by plain manifests(`kubectl apply -f`) or Kustomize(`kubectl apply -k`).
+
 In addition to deploy(`kubectl apply`) operation, it also supports delete(`kubectl delete`) and undo(`kubectl rollout undo`) operations.
+
+This resource has been tested on 1.14 and 1.17 (probably works on 1.15 and 1.16).
 
 ## Source Configuration
 
@@ -26,7 +29,7 @@ Triggers when the watched resources is updated.
 The Revision consists of namespace, resource name, and revision(Deployment or StatefulSet resource). 
 Multiple resources are combined with `+`.
 
-Example version file is `dev:app1:100+dev:app2:50+dev:app3:10`.
+Example version format : `dev:app1:100+dev:app2:50+dev:app3:10`.
 
 ### `in`
 
@@ -34,9 +37,9 @@ Retrieves the watched resource's version and writes to `version` file.
 
 ### `out`
 
-Deploys the watched resources to kubernetes using a plain manifest or Kustomize overlays. After deployed, wait for the specified time to complete.
+Deploys the watched resources to kubernetes using plain manifests or Kustomize overlays. After deployed, wait for the specified time to complete.
 
-* **`paths`** - kubernetes manifests path. plain manifests path(e.g. `k8s/deployment.yaml`) or kustomize directory(e.g. `repo/overlays/prod`)
+* **`paths`** - kubernetes manifest paths(array). plain manifests path(e.g. `k8s/deployment.yaml`) or kustomize directory(e.g. `repo/overlays/prod`)
 * `kustomize` - true if deploying by kustomize. Default to `false`.
 * `status_check_timeout` - The time(seconds) to wait for deployment to complete. Default to 5 minutes.
 * `command_timeout` - The time(seconds) to wait for kubectl apply or delete. Default to unlimited(0).

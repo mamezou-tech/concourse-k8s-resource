@@ -57,7 +57,7 @@ func (*undoCommandFactory) create(config *CommandConfig) (commands []*Command, e
 		default:
 			log.Fatalln("unsupported resource kind", resource.Kind)
 		}
-		commands = append(commands, &Command{command: command, args: args})
+		commands = append(commands, &Command{command, args})
 	}
 	return
 }

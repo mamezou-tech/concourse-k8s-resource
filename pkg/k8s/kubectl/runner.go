@@ -24,7 +24,7 @@ type CommandConfig struct {
 }
 
 type Command struct {
-	command *cobra.Command
+	*cobra.Command
 	args    []string
 }
 
@@ -35,23 +35,22 @@ type CommandFactory interface {
 func RunCommand(factory CommandFactory, config *CommandConfig) error {
 	var wg sync.WaitGroup
 	cmds, err := factory.create(config)
-	wg.Add(len(cmds))
 	if err != nil {
 		return err
 	}
+	wg.Add(len(cmds))
 	for _, cmd := range cmds {
-		printFlagsAndArgs(cmd.command, cmd.args)
+		printFlagsAndArgs(cmd)
 		go run(*cmd, &wg)
 	}
 	wg.Wait()
-
 	return nil
 }
 
 func run(cmd Command, wg *sync.WaitGroup) {
 	defer wg.Done()
-	log.Printf("running %s command... %v", cmd.command.Name(), cmd.args)
-	cmd.command.Run(cmd.command, cmd.args)
+	log.Printf("running %s command... %v", cmd.Name(), cmd.args)
+	cmd.Run(cmd.Command, cmd.args)
 }
 
 func NewCommandFactory(params *models.OutParams) CommandFactory {
@@ -65,13 +64,13 @@ func NewCommandFactory(params *models.OutParams) CommandFactory {
 	}
 }
 
-func printFlagsAndArgs(command *cobra.Command, args []string) {
+func printFlagsAndArgs(command *Command) {
 	log.Println("** kubectl flags **")
 	command.Flags().VisitAll(func(flag *pflag.Flag) {
 		log.Printf("- %s -> %s\n", flag.Name, flag.Value.String())
 	})
 	log.Println("** kubectl args **")
-	for _, arg := range args {
+	for _, arg := range command.args {
 		log.Printf("- %s\n", arg)
 	}
 }
