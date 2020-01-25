@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

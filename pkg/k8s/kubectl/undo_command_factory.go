@@ -2,7 +2,7 @@ package kubectl
 
 import (
 	"fmt"
-	"github.com/kudoh/concourse-k8s-resource/pkg/k8s"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/kubectl/pkg/cmd/rollout"
 	"k8s.io/kubectl/pkg/util/deployment"

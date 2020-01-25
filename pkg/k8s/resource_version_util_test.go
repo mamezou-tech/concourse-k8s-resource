@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"github.com/stretchr/testify/assert"
 	appv1 "k8s.io/api/apps/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

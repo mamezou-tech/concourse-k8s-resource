@@ -1,4 +1,4 @@
-module github.com/kudoh/concourse-k8s-resource
+module github.com/mamezou-tech/concourse-k8s-resource
 
 go 1.13
 

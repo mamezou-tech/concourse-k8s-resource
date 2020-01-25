@@ -2,7 +2,7 @@ package k8s
 
 import (
 	"fmt"
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"k8s.io/client-go/kubernetes"
 	"log"
 	"strings"

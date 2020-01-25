@@ -64,7 +64,7 @@ resources:
 - name: repo
   type: git
   source:
-    uri: https://github.com/kudoh/concourse-k8s-resource.git
+    uri: https://github.com/mamezou-tech/concourse-k8s-resource.git
     branch: master
     paths: [test]
 

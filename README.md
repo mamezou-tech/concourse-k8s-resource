@@ -1,6 +1,6 @@
 # concourse-k8s-resource
 [![Go Report Card](https://goreportcard.com/badge/github.com/mamezou-tech/concourse-k8s-resource)](https://goreportcard.com/report/github.com/mamezou-tech/concourse-k8s-resource)
-![Github Action](https://github.com/kudoh/concourse-k8s-resource/workflows/Go/badge.svg)
+![Github Action](https://github.com/mamezou-tech/concourse-k8s-resource/workflows/Go/badge.svg)
 
 Concourse CI custom resource for kubernetes.
 

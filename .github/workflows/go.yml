@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Test
-      run: go test -cover github.com/kudoh/concourse-k8s-resource/pkg/k8s/...
+      run: go test -cover github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s/...
 
     - name: Build
       run: |

@@ -1,7 +1,7 @@
 package kubectl
 
 import (
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
@@ -25,7 +25,7 @@ type CommandConfig struct {
 
 type Command struct {
 	*cobra.Command
-	args    []string
+	args []string
 }
 
 type CommandFactory interface {

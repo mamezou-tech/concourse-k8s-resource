@@ -1,8 +1,8 @@
 package kubectl
 
 import (
-	"github.com/kudoh/concourse-k8s-resource/pkg/k8s"
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/discovery/cached/memory"
 	"k8s.io/client-go/tools/clientcmd"

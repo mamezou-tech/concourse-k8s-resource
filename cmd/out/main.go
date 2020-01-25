@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/kudoh/concourse-k8s-resource/pkg/k8s"
-	"github.com/kudoh/concourse-k8s-resource/pkg/k8s/kubectl"
-	"github.com/kudoh/concourse-k8s-resource/pkg/models"
-	"github.com/kudoh/concourse-k8s-resource/pkg/utils"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s/kubectl"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
+	"github.com/mamezou-tech/concourse-k8s-resource/pkg/utils"
 	"k8s.io/cli-runtime/pkg/genericclioptions"
 	"k8s.io/client-go/discovery"
 	"k8s.io/client-go/kubernetes"
