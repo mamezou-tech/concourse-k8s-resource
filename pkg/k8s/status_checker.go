@@ -5,6 +5,7 @@ import (
 	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
+	"k8s.io/kubectl/pkg/util/deployment"
 	"log"
 	"os"
 	"os/signal"
@@ -80,7 +81,17 @@ func (c *statusChecker) check() error {
 			if err != nil {
 				return err
 			}
-			if d.Status.ReadyReplicas == *d.Spec.Replicas {
+
+			_, _, newRS, err := deployment.GetAllReplicaSets(d, c.clientset.AppsV1())
+			if err != nil {
+				return err
+			}
+			if newRS == nil {
+				log.Printf("[%s] No ReplicaSet found. skip check\n", c.resource.Name)
+				return nil
+			}
+
+			if newRS.Status.ReadyReplicas == *newRS.Spec.Replicas {
 				return nil
 			}
 		case IsStatefulSet(c.resource.Kind):

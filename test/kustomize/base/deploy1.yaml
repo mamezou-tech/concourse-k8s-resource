@@ -29,6 +29,10 @@ spec:
       labels:
         app: app1
     spec:
+      initContainers:
+        - name: sleep
+          image: busybox:latest
+          command: ["sleep", "10"]
       containers:
         - image: kudohn/app1:v1.3
           name: app1

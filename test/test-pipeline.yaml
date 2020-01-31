@@ -4,7 +4,7 @@ resource_types:
   type: docker-image
   source:
     repository: kudohn/concourse-k8s-resource
-    tag: 0.0.3
+    tag: latest
 
 resources:
 - name: k8s
