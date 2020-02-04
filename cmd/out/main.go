@@ -13,6 +13,7 @@ import (
 	"log"
 	"os"
 	"reflect"
+	"time"
 )
 
 var streams = genericclioptions.IOStreams{
@@ -50,6 +51,7 @@ func main() {
 		log.Fatalln("cannot run kubectl command", err)
 	}
 	if !request.Params.Delete {
+		time.Sleep(5 * time.Second)
 		log.Println("check status for", request.Source.WatchResources)
 		if ok := k8s.CheckResourceStatus(clientset, request.Source.Namespace, request.Source.WatchResources, request.Params.StatusCheckTimeout); !ok {
 			log.Fatalln("resource is not running...")

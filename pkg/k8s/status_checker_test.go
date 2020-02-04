@@ -21,6 +21,7 @@ func TestCheckResourceStatus(t *testing.T) {
 			UID:       "uid",
 		},
 		Spec: appv1.DeploymentSpec{
+			Replicas: replicas(3),
 			Template: v1.PodTemplateSpec{
 				Spec: v1.PodSpec{},
 			},
@@ -38,7 +39,6 @@ func TestCheckResourceStatus(t *testing.T) {
 			}},
 		},
 		Spec: appv1.ReplicaSetSpec{
-			Replicas: replicas(3),
 			Template: v1.PodTemplateSpec{
 				Spec: v1.PodSpec{},
 			},
@@ -86,6 +86,7 @@ func TestTimeout(t *testing.T) {
 			UID:       "uid",
 		},
 		Spec: appv1.DeploymentSpec{
+			Replicas: replicas(3),
 			Template: v1.PodTemplateSpec{
 				Spec: v1.PodSpec{},
 			},
@@ -103,7 +104,6 @@ func TestTimeout(t *testing.T) {
 			}},
 		},
 		Spec: appv1.ReplicaSetSpec{
-			Replicas: replicas(3),
 			Template: v1.PodTemplateSpec{
 				Spec: v1.PodSpec{},
 			},

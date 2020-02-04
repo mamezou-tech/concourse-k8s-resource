@@ -55,8 +55,6 @@ func CheckResourceStatus(clientset kubernetes.Interface, namespace string, resou
 			if err != nil {
 				log.Println("status check", "error!", "->", c.resource.Name, err)
 				return false
-			} else {
-				log.Println("status check", "ok!", "->", c.resource.Name)
 			}
 		case <-c.timeout:
 			log.Println("status check", "timeout!", "->", c.resource.Name)
@@ -75,23 +73,27 @@ func (c *statusChecker) check() error {
 			return fmt.Errorf("interrupted")
 		default:
 		}
+		var desired int32
+		var current int32
 		switch {
 		case IsDeployment(c.resource.Kind):
 			d, err := c.clientset.AppsV1().Deployments(c.namespace).Get(c.resource.Name, metav1.GetOptions{})
 			if err != nil {
 				return err
 			}
+			desired = *d.Spec.Replicas
 
 			_, _, newRS, err := deployment.GetAllReplicaSets(d, c.clientset.AppsV1())
 			if err != nil {
 				return err
 			}
 			if newRS == nil {
-				log.Printf("[%s] No ReplicaSet found. skip check\n", c.resource.Name)
-				return nil
+				continue
 			}
 
-			if newRS.Status.ReadyReplicas == *newRS.Spec.Replicas {
+			current = newRS.Status.ReadyReplicas
+			if desired == current {
+				log.Println("status check", "ok!", "->", c.resource.Name, "desired:", desired, "ready:", current)
 				return nil
 			}
 		case IsStatefulSet(c.resource.Kind):
@@ -99,15 +101,18 @@ func (c *statusChecker) check() error {
 			if err != nil {
 				return err
 			}
-			if sts.Status.ReadyReplicas == *sts.Spec.Replicas {
+			desired = *sts.Spec.Replicas
+			current = sts.Status.ReadyReplicas
+			if desired == current {
+				log.Println("status check", "ok!", "->", c.resource.Name, "desired:", desired, "ready:", current)
 				return nil
 			}
 		default:
 			log.Fatalln("unsupported resource kind", c.resource.Kind)
 		}
 		if i%10 == 0 {
-			log.Println("waiting", c.resource.Name)
+			log.Println("waiting", c.resource.Name, "desired:", desired, "ready:", current)
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 }

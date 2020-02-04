@@ -58,7 +58,7 @@ resource_types:
   type: docker-image
   source:
     repository: kudohn/concourse-k8s-resource
-    tag: <version>
+    tag: 0.0.7
 ```
 
 ### `resources`
