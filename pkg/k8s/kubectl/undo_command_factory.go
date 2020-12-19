@@ -1,6 +1,7 @@
 package kubectl
 
 import (
+	"context"
 	"fmt"
 	"github.com/mamezou-tech/concourse-k8s-resource/pkg/k8s"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -24,7 +25,7 @@ func (*undoCommandFactory) create(config *CommandConfig) (commands []*Command, e
 		var args []string
 		switch {
 		case k8s.IsDeployment(resource.Kind):
-			d, err := config.Clientset.AppsV1().Deployments(config.Namespace).Get(resource.Name, metav1.GetOptions{})
+			d, err := config.Clientset.AppsV1().Deployments(config.Namespace).Get(context.TODO(), resource.Name, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
 			}
@@ -40,11 +41,11 @@ func (*undoCommandFactory) create(config *CommandConfig) (commands []*Command, e
 			args = []string{fmt.Sprintf("%s/%s", "deployment", resource.Name)}
 
 		case k8s.IsStatefulSet(resource.Kind):
-			sts, err := config.Clientset.AppsV1().StatefulSets(config.Namespace).Get(resource.Name, metav1.GetOptions{})
+			sts, err := config.Clientset.AppsV1().StatefulSets(config.Namespace).Get(context.TODO(), resource.Name, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
 			}
-			rev, err := config.Clientset.AppsV1().ControllerRevisions(config.Namespace).Get(sts.Status.CurrentRevision, metav1.GetOptions{})
+			rev, err := config.Clientset.AppsV1().ControllerRevisions(config.Namespace).Get(context.TODO(), sts.Status.CurrentRevision, metav1.GetOptions{})
 			if err != nil {
 				return nil, err
 			}

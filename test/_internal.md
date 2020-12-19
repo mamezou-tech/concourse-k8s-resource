@@ -6,8 +6,8 @@
 kubectl create ns concourse
 helm repo add concourse https://concourse-charts.storage.googleapis.com/
 helm upgrade --install concourse concourse/concourse --namespace concourse \
-  --set persistence.worker.storageClass=openebs-cstor-sparse \
-  --set postgresql.persistence.storageClass=openebs-cstor-sparse
+  --set persistence.worker.storageClass=openebs-hostpath \
+  --set postgresql.persistence.storageClass=openebs-hostpath
 
 export POD_NAME=$(kubectl get pods --namespace concourse -l "app=concourse-web" -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward --namespace concourse $POD_NAME 8080:8080

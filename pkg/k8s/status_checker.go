@@ -1,6 +1,7 @@
 package k8s
 
 import (
+	"context"
 	"fmt"
 	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -77,7 +78,7 @@ func (c *statusChecker) check() error {
 		var current int32
 		switch {
 		case IsDeployment(c.resource.Kind):
-			d, err := c.clientset.AppsV1().Deployments(c.namespace).Get(c.resource.Name, metav1.GetOptions{})
+			d, err := c.clientset.AppsV1().Deployments(c.namespace).Get(context.TODO(), c.resource.Name, metav1.GetOptions{})
 			if err != nil {
 				return err
 			}
@@ -97,7 +98,7 @@ func (c *statusChecker) check() error {
 				return nil
 			}
 		case IsStatefulSet(c.resource.Kind):
-			sts, err := c.clientset.AppsV1().StatefulSets(c.namespace).Get(c.resource.Name, metav1.GetOptions{})
+			sts, err := c.clientset.AppsV1().StatefulSets(c.namespace).Get(context.TODO(), c.resource.Name, metav1.GetOptions{})
 			if err != nil {
 				return err
 			}

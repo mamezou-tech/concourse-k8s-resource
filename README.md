@@ -8,7 +8,7 @@ This resource assumes that kubernetes deployment is executed by plain manifests(
 
 In addition to deploy(`kubectl apply`) operation, it also supports delete(`kubectl delete`) and undo(`kubectl rollout undo`) operations.
 
-This resource has been tested on 1.14 and 1.17 (probably works on 1.15 and 1.16).
+This resource has been tested on kubernetes v1.20.1 and concourse v6.7.2.
 
 ## Source Configuration
 
