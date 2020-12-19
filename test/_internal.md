@@ -39,4 +39,7 @@ cat test/json/out_request_undo_kustomize.json | go run cmd/out/main.go
 ## delete
 cat test/json/out_request_delete_plain.json | go run cmd/out/main.go
 cat test/json/out_request_delete_kustomize.json | go run cmd/out/main.go
+## dry-run
+cat test/json/out_request_dryrun_plain.json | go run cmd/out/main.go
+cat test/json/out_request_dryrun_kustomize.json | go run cmd/out/main.go
 ```

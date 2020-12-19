@@ -15,6 +15,9 @@ func (*applyCommandFactory) create(config *CommandConfig) (commands []*Command, 
 	setFlag(command, "record", "true")
 	setFlag(command, "timeout", strconv.Itoa(int(config.Params.CommandTimeout))+"s")
 	setManifestPath(command, config.Params)
+	if config.Params.ServerDryRun {
+		setFlag(command, "dry-run", "server")
+	}
 
 	commands = append(commands, &Command{command, []string{}})
 	return

@@ -56,10 +56,12 @@ type OutParams struct {
 	StatusCheckTimeout int32 `json:"status_check_timeout"`
 	// if true, delete resources
 	Delete bool `json:"delete"`
-	// if true, rollback previous deployment
+	// if true, rollback to previous deployment
 	Undo bool `json:"undo"`
 	// kubectl timeout seconds
 	CommandTimeout int32 `json:"command_timeout"`
+	// if true, execute as dry-run=server
+	ServerDryRun bool `json:"server_dry_run"`
 }
 
 // concourse metadata
