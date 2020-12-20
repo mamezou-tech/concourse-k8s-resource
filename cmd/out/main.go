@@ -50,7 +50,7 @@ func main() {
 	if err := kubectl.RunCommand(factory, commandConfig); err != nil {
 		log.Fatalln("cannot run kubectl command", err)
 	}
-	if !request.Params.Delete {
+	if requireStatusCheck(request.Params) {
 		time.Sleep(5 * time.Second)
 		log.Println("check status for", request.Source.WatchResources)
 		if ok := k8s.CheckResourceStatus(clientset, request.Source.Namespace, request.Source.WatchResources, request.Params.StatusCheckTimeout); !ok {
@@ -66,24 +66,25 @@ func main() {
 	}
 }
 
+func requireStatusCheck(params models.OutParams) bool {
+	return !params.Delete && !params.ServerDryRun && !params.Diff
+}
+
 func createResponse(request models.OutRequest, clientset kubernetes.Interface) *models.OutResponse {
 
 	if request.Params.Delete {
 		// resources is deleted, so just return empty response
-		return &models.OutResponse{
-			Version:  models.Version{},
-			Metadata: nil,
-		}
+		return emptyResponse()
 	}
 
 	// apply or undo
 	version, err := k8s.GetCurrentVersion(&request.Source, clientset)
 	if err != nil {
-		log.Fatalln(err)
+		return emptyResponse()
 	}
 	metadatas, err := k8s.GenerateMetadatas(&request.Source, clientset)
 	if err != nil {
-		log.Fatalln(err)
+		return emptyResponse()
 	}
 
 	response := models.OutResponse{
@@ -91,6 +92,13 @@ func createResponse(request models.OutRequest, clientset kubernetes.Interface) *
 		Metadata: metadatas,
 	}
 	return &response
+}
+
+func emptyResponse() *models.OutResponse {
+	return &models.OutResponse{
+		Version:  models.Version{},
+		Metadata: nil,
+	}
 }
 
 func toDiscoveryInterface(obj interface{}) discovery.DiscoveryInterface {

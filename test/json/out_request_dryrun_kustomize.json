@@ -27,6 +27,6 @@
     "kustomize": true,
     "paths": ["test/kustomize/overlays/prod"],
     "status_check_timeout": 60,
-    "undo": true
+    "server_dry_run": true
   }
 }

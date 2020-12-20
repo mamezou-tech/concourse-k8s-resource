@@ -1,6 +1,7 @@
 package k8s
 
 import (
+	"context"
 	appsv1 "k8s.io/api/apps/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
@@ -19,7 +20,7 @@ type DeploymentReader struct {
 var _ MetadataReader = &DeploymentReader{}
 
 func NewDeploymentReader(clientset kubernetes.Interface, namespace string, name string) (*DeploymentReader, error) {
-	d, err := clientset.AppsV1().Deployments(namespace).Get(name, metav1.GetOptions{})
+	d, err := clientset.AppsV1().Deployments(namespace).Get(context.TODO(), name, metav1.GetOptions{})
 	if err != nil {
 		return nil, err
 	}
@@ -42,11 +43,11 @@ type StatefulSetReader struct {
 var _ MetadataReader = &StatefulSetReader{}
 
 func NewStatefulSetReader(clientset kubernetes.Interface, namespace string, name string) (*StatefulSetReader, error) {
-	sts, err := clientset.AppsV1().StatefulSets(namespace).Get(name, metav1.GetOptions{})
+	sts, err := clientset.AppsV1().StatefulSets(namespace).Get(context.TODO(), name, metav1.GetOptions{})
 	if err != nil {
 		return nil, err
 	}
-	rev, err := clientset.AppsV1().ControllerRevisions(namespace).Get(sts.Status.CurrentRevision, metav1.GetOptions{})
+	rev, err := clientset.AppsV1().ControllerRevisions(namespace).Get(context.TODO(), sts.Status.CurrentRevision, metav1.GetOptions{})
 	if err != nil {
 		return nil, err
 	}

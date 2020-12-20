@@ -8,7 +8,7 @@ This resource assumes that kubernetes deployment is executed by plain manifests(
 
 In addition to deploy(`kubectl apply`) operation, it also supports delete(`kubectl delete`) and undo(`kubectl rollout undo`) operations.
 
-This resource has been tested on 1.14 and 1.17 (probably works on 1.15 and 1.16).
+This resource has been tested on kubernetes v1.20.1 and concourse v6.7.2.
 
 ## Source Configuration
 
@@ -43,6 +43,8 @@ Deploys the watched resources to kubernetes using plain manifests or Kustomize o
 * `kustomize` - true if deploying by kustomize. Default to `false`.
 * `status_check_timeout` - The time(seconds) to wait for deployment to complete. Default to 5 minutes.
 * `command_timeout` - The time(seconds) to wait for kubectl apply or delete. Default to unlimited(0).
+* `diff` - true if using `kubectl diff`. Default to `false`.
+* `server_dry_run` - true if using `kubectl apply --dry-run=server`. Default to `false`.
 * `delete` - true if using `kubectl delete` operation. Default to `false`.
 * `undo` - true if using `kubectl rollout undo` operation(target resources are `watchedResources`). Default to `false`.
 
@@ -58,7 +60,7 @@ resource_types:
   type: docker-image
   source:
     repository: kudohn/concourse-k8s-resource
-    tag: 0.0.7
+    tag: 0.0.8
 ```
 
 ### `resources`
@@ -161,6 +163,32 @@ jobs:
       undo: true
 ```
 
+#### Deploy resources with server-dry-run
+
+```yaml
+jobs:
+- name: deploy-app
+  plan:
+  - get: repo
+  - put: k8s
+    params:
+      paths:
+      - repo/test/kustomize/overlays/prod
+      server_dry_run: true
+```
+#### Diff Resources manifests
+
+```yaml
+jobs:
+- name: deploy-app
+  plan:
+  - get: repo
+  - put: k8s
+    params:
+      paths:
+      - repo/test/kustomize/overlays/prod
+      diff: true
+```
 #### Delete Resources
 
 ```yaml

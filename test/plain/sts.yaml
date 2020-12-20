@@ -40,7 +40,7 @@ spec:
     - metadata:
         name: www
       spec:
-        storageClassName: openebs-cstor-sparse
+        storageClassName: openebs-hostpath
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:

@@ -1,6 +1,7 @@
 package k8s
 
 import (
+	"context"
 	"github.com/mamezou-tech/concourse-k8s-resource/pkg/models"
 	"github.com/stretchr/testify/assert"
 	appv1 "k8s.io/api/apps/v1"
@@ -68,9 +69,9 @@ func TestCheckResourceStatus(t *testing.T) {
 	time.AfterFunc(1*time.Second, func() {
 		t.Log("ready for pod...")
 		app1rs.Status.ReadyReplicas = 3
-		clientset.AppsV1().ReplicaSets("test").Update(&app1rs)
+		clientset.AppsV1().ReplicaSets("test").Update(context.TODO(), &app1rs, metav1.UpdateOptions{})
 		app2.Status.ReadyReplicas = 2
-		clientset.AppsV1().StatefulSets("test").Update(&app2)
+		clientset.AppsV1().StatefulSets("test").Update(context.TODO(), &app2, metav1.UpdateOptions{})
 	})
 
 	ok := CheckResourceStatus(clientset, "test", resources, 5)

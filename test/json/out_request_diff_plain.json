@@ -24,9 +24,7 @@
     ]
   },
   "params": {
-    "kustomize": true,
-    "paths": ["test/kustomize/overlays/prod"],
-    "status_check_timeout": 60,
-    "undo": true
+    "paths": ["test/plain/deploy1.yaml", "test/plain/deploy2.yaml", "test/plain/sts.yaml"],
+    "diff": true
   }
 }
