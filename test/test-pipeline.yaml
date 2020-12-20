@@ -4,7 +4,7 @@ resource_types:
   type: docker-image
   source:
     repository: kudohn/concourse-k8s-resource
-    tag: 0.0.8-rc.1
+    tag: 0.0.8
 
 resources:
 - name: k8s
@@ -52,7 +52,7 @@ resources:
 
     skip_tls_verify: false
     namespace: dev
-    debug: true
+#    debug: true
     watch_resources:
     - name: app1
       kind: Deployment
@@ -180,3 +180,19 @@ jobs:
       params:
         <<: *kustomize-param
         server_dry_run: true
+
+- name: diff-plain
+  plan:
+    - get: repo
+    - put: k8s
+      params:
+        <<: *plain-param
+        diff: true
+
+- name: diff-kustomize
+  plan:
+    - get: repo
+    - put: k8s
+      params:
+        <<: *kustomize-param
+        diff: true

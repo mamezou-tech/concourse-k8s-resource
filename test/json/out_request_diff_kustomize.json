@@ -1,0 +1,31 @@
+{
+  "version": { "ref": "61cebf" },
+  "source": {
+    "api_server_url": "https://172.16.10.11:6443",
+    "api_server_cert": "-----BEGIN CERTIFICATE-----\nMIIC5zCCAc+gAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTIwMTIxOTA0NTEzMloXDTMwMTIxNzA0NTEzMlowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAPAA\ndtccuRvlYDYK25elZx7EB/7XQ1BLKVqbDuacJ976DIUYQP0iNAMkkbZ5ZPjmqSc/\nVs4hutXBJR988Jw4I7aKjAEQkTOpStR4aSrS6HueEGE9Gf8OG3fmuUU71OwVbXrT\nC0G6ptoHs2P61MubsAEGpYMcWrNSKCifrbtK/zPvK3kQEO/maRmHpopFaCtNDzCO\nr83yoRHUwLybDPljpJPG6x8bYjD1sTkODVA+hLwRMLo0SMrQnBWqv3jyhQ/XO+1/\nVxzIsI4VL+i8uz+Zjz9F/CHPGFaC9TnH2cFICTV/2IFl00MbvexTzf6pVHXh1VqY\n10geJ+VPCu+jfKSNJLsCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wHQYDVR0OBBYEFMpKFzTU9gkNRLpugrfvAwKzOHnqMA0GCSqGSIb3\nDQEBCwUAA4IBAQDjif/JUYm+upVHvX0RXWQx6nR1lR8BpDJ47JkZ4yAj3ieuFXd6\nhzfNkgJVzDibQOeg+LMPM+NjrTVYkXuOP6a3Ush+2nUfcfOZZaxxZ7FtNBlQfHuM\nYrIdUR5XPyf8EkEvkB4C2U5PqVlN/qf00E8M1i0h1tqaAWjh6yJd/T1Nih5MPdCg\n5Z4yuinVcLtAbUSLFJIwgLCtYaj4lN3R3jzvBpPe3huElL5kSviV4o8VErIyiCgY\nMx6ybuq1Pdx5A05Lw53TtAXDQ7JFd9DuRwI2jN8hMpNQTxIDBsT86yLwuVllC5Q/\naXm1/22N20icACWXDcYF2F8tfS+weOeVIPCT\n-----END CERTIFICATE-----\n",
+    "client_cert": "-----BEGIN CERTIFICATE-----\nMIICwjCCAaoCFG/mzrgZRjp3iU/xbBijICkFP9JrMA0GCSqGSIb3DQEBCwUAMBUx\nEzARBgNVBAMTCmt1YmVybmV0ZXMwHhcNMjAxMjE5MDQ1MTUzWhcNMjExMjE0MDQ1\nMTUzWjAmMQ4wDAYDVQQDDAVhZG1pbjEUMBIGA1UECgwLbWFtZXpvdS1zcmUwggEi\nMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDO6y3qpOrtOJV2s+e47Y+JS88d\njDh8kCF6kRWkEQrixkjihoM87u3PjRP1bl+iHDViWmqZmEYD3gpqh7ABgij9sXNz\n82+OI6NbWTszPn0FRloO1H/Xn25RNoZpN7brA6PmyEtmIs6e416cR/RvrST9KN0u\nrqvjhhDozLeCZBLj7OM5i82QZ/m6Mo1ab65hui1nGX/hIZokbmLtBfirMXJ27DeM\nQ5p+2xtBMFpipnd0MdN4wNqSKILVdiQFqnYZTbcqWCNHsvYvphs1rtfkWErmhdFT\nbEkiqFo7KHfLmhUhL4LXder8C6s1p88VBFzmm8m/V0a5J60av+LTTc+jbecpAgMB\nAAEwDQYJKoZIhvcNAQELBQADggEBABCFGqf9Eqf+BZiYebbkYJQqCGUFtTKV9zuN\nGmfgdzC0LS0AB9d4IxFtMiMpi8lNSrrHrwD2PlpY9ZiCCXxxrcmaL3bgoOxPVYH4\ntfG0xaoqqKp9dT3UBHMPVr1JgSnjIkov0NL8UVvzzS4CLykfobiC5pgacyVyVfsx\nXSje4XQ7GdxaX+dU42/sF0c9RyIpuwpIj5PpE66UiKziuJYLUDAHVAZ2as3u0MZv\n1Mi9n/22Xu1kbT9KRkE2vmNZlZTRd4HSyLqMUIfK0WFBa3MF2Y+FRVzBeTPsskh6\n4/Uv/vZWOyRG/C0u+tjFd+B/vfLkbtLs4gEFX2SeB4z5ApgG6Qc=\n-----END CERTIFICATE-----\n",
+    "client_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDO6y3qpOrtOJV2\ns+e47Y+JS88djDh8kCF6kRWkEQrixkjihoM87u3PjRP1bl+iHDViWmqZmEYD3gpq\nh7ABgij9sXNz82+OI6NbWTszPn0FRloO1H/Xn25RNoZpN7brA6PmyEtmIs6e416c\nR/RvrST9KN0urqvjhhDozLeCZBLj7OM5i82QZ/m6Mo1ab65hui1nGX/hIZokbmLt\nBfirMXJ27DeMQ5p+2xtBMFpipnd0MdN4wNqSKILVdiQFqnYZTbcqWCNHsvYvphs1\nrtfkWErmhdFTbEkiqFo7KHfLmhUhL4LXder8C6s1p88VBFzmm8m/V0a5J60av+LT\nTc+jbecpAgMBAAECggEBAKuu9M0xAv/LKDByezy0V5k6fmHs2113FWAmC0ezIE4i\n6YySwUeIk2bXjozghJb0QtMVZEeG0ekZjZjwdnf58Fr2pm25uYC9TyhXNEiDe6Yp\nxkVxyZU14omd7Q5WPP5oadDttanMDZZF31VaWpVim0M2abb3FQXWUidm3Ihi0k2r\n3LM6lmLq2hX2lzSfIvI/i8cc7N4OfZgqaq17/EgZzz9LeaWG8SfpU3o4wBaRuxv1\nVHHqQhPlCcScKpjqLO7KaFKZt5tW9cp/HAWtJjYVU9ViPD27Bny4xLMS3R2TzcHr\n3cr7qJAIJ10K7Htb7m1YQhGu0+L5bU9QoM7GAeZHtGUCgYEA6P/PJG5EAUjMy603\nYiMTlOZwol71BNbK2rBgYeQvnhwD35XxT46iJGN2vTtpzQvktAECRENSa0JOT1Qc\nHnvgkDQJxs/7/Diuh/yJOSFIqg1TSI1ttSUozjEXE23V1ZzbCsbL4XmuntOMVJHJ\n+WyRgpF4j8GIaAK5LZf4Ru/ue4MCgYEA41hHwHtmkWqvgmDXrOx9yanuJEb+l/lp\nAmR9u7Sc8V+60Zl4Uwz8P/BrP/gFxzAoZk0e7KPklG3koTLPzlHE7hFElPxB7b2t\nbaj9t33HB1JDxYTuLfZfv4Gsaq1ty74Az7spk1fURMhaAFjAb9Vl3PEMqS79bkPy\nPM6k8qtYduMCgYA1wyD21QKYEUZAEP3ghRt1lh6TOLnsnes8vsnejJp4Lxqtspl1\ntAGxx8mULGtjRsVEy57MRYR0/122bD/4wLi2TWucFk2ciy+qbRj0t7tekaiP6yJP\nU/2wZh9e+k8G9SSNvgU5R6yFNWcB9InYJbcFm69n7E4fQdGctZ4yMBalJQKBgHRG\nn5QbyS7QwOlO/KAt6HvvFKSrRuWVo5acrQ4G50owqw0ukDLx7kYJgeEaymHBCLih\n8xIXFP6xYgDsSwp8GdulK02D43hjzcLLbtCdXOEquwzX2zXYz8nT2cpJ32EYUbPt\nRutcPW3chuOsgOfx3gJtqwsQxH/T8p4VFpoi9sD/AoGAXPOewmeImiWP2g7ibN5J\nOV34VrTJoNFNjipHNPRtP7RVVLbxQR5HUFDd2mp/lJbYopfXfFbRVUgSKTGuoJ6T\nlccW+SqfOkbK0h9NzaZwE3NpKbn0uDNaPaSoDbAERNDO6BqSvi9a2CXM8WPKngdD\nNoWbGoD090Fs8zKJicoUENg=\n-----END PRIVATE KEY-----\n",
+    "skip_tls_verify": false,
+    "namespace": "dev",
+    "debug": true,
+    "watch_resources": [
+      {
+        "kind": "Deployment",
+        "name": "app1"
+      },
+      {
+        "kind": "Deployment",
+        "name": "app2"
+      },
+      {
+        "kind": "statefulset",
+        "name": "web"
+      }
+    ]
+  },
+  "params": {
+    "kustomize": true,
+    "paths": ["test/kustomize/overlays/prod"],
+    "diff": true
+  }
+}

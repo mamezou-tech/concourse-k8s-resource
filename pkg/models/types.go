@@ -62,6 +62,8 @@ type OutParams struct {
 	CommandTimeout int32 `json:"command_timeout"`
 	// if true, execute as dry-run=server
 	ServerDryRun bool `json:"server_dry_run"`
+	// if true, run diff command instead of apply
+	Diff bool `json:"diff"`
 }
 
 // concourse metadata

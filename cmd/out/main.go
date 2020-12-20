@@ -67,7 +67,7 @@ func main() {
 }
 
 func requireStatusCheck(params models.OutParams) bool {
-	return !params.Delete && !params.ServerDryRun
+	return !params.Delete && !params.ServerDryRun && !params.Diff
 }
 
 func createResponse(request models.OutRequest, clientset kubernetes.Interface) *models.OutResponse {

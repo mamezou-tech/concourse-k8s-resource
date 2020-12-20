@@ -59,6 +59,8 @@ func NewCommandFactory(params *models.OutParams) CommandFactory {
 		return &undoCommandFactory{}
 	case params.Delete:
 		return &deleteCommandFactory{}
+	case params.Diff:
+		return &diffCommandFactory{}
 	default:
 		return &applyCommandFactory{}
 	}
